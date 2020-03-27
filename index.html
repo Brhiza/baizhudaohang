@@ -1,0 +1,1492 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>白术丨个人导航</title>
+    <!-- <link rel="shortcut icon" href="../favcion.ico" /> -->
+    <link rel="shortcut icon" href="img/favicon.ico" />
+    <link rel="stylesheet" href=" css/iconfont.css">
+    <!-- <link rel="stylesheet" href="../plug-in/normalize.css"> -->
+    <link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+	<script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css"/>
+<script src="waifu/autoload.js"></script>
+</head>
+
+<body>
+    <div class="container" id="container">
+        <aside class="left-bar" id="leftBar">
+            <div id="banner"style="padding-bottom:0px">
+                <div style="display: flex; justify-content: center; align-items: center;">
+                		<a href="http://233.brhiza.ml"><img src="img/brhiza.png" width="100%" height="100%">
+            </div>
+            <nav class="nav">
+			<div class="item active"><a href="#search"><i class="iconfont icon-daohang2"></i>搜索</a><i class="line"></i></div>
+				<div class="item active"><a href="#shiyonggongju"><i class="iconfont icon-daohang2"></i>常用导航</a><i class="line"></i></div>
+              	  <ul class="nav-item" id="navItem">
+                  <li><a href="#shiyonggongju"><i class="iconfont icon-tool"></i> 实用工具</a></li>
+				  <li><a href="#changyongwangzhan"><i class="iconfont icon-daohang1"></i> 常用网站</a></li>
+				  <li><a href="#bangong"><i class="fa fa-asl-interpreting"></i>办公</a></li>
+				  <li><a href="#daohang"><i class="fa fa-rocket"></i>导航</a></li>
+				  <li><a href="#jingshenliangshi"><i class="fa fa-pencil-square"></i>精神粮食</a></li>
+				  <li><a href="#zaodu"><i class="fa fa-align-left"></i>知识早读</a></li>
+				  <li><a href="#yule"><i class="fa fa-support"></i> 娱乐</a></li>
+				  <div class="item active"><a href="#changyongwangzhi"><i class="iconfont icon-daohang2"></i>设计导航</a><i class="line"></i></div>
+				  <li><a href="#changyongwangzhi"><i class="fa fa-heart"></i>常用网址</a></li>
+				  <li><a href="#jiaohu"><i class="fa fa-eercast"></i>交互体验</a></li>
+				  <li><a href="#guifan"><i class="fa fa-file-text"></i>设计规范</a></li>
+				  <li><a href="#shejiziyuan"><i class="fa fa-cloud-download"></i>设计资源</a></li>
+				  <li><a href="#jiaocheng"><i class="fa fa-coffee"></i>设计教程</a></li>
+				  <li><a href="#qitaziyuan"><i class="fa fa-cloud-download"></i>其他资源</a></li>
+                  </ul>
+				<!-- 关于 -->
+				<div class="item comment">
+				  <a target="_blank" href="https://brhiza.github.io/"><i class="iconfont icon-github"></i>白术云</a></li><br/>
+				  <a target="_blank" href="about.html"><i class="iconfont icon-liuyan"></i>关于</a>
+				</div>
+            </nav>
+        </aside>
+        <section class="main">
+            <div id="mainContent">
+                <!-- 手机端菜单 -->
+                <div id="menu-box">
+                   <div id="menu">
+                       <input type="checkbox" id="menu-form">
+                       <label for="menu-form" class="menu-spin">
+                        <div class="line diagonal line-1"></div>
+                        <div class="line horizontal"></div>
+                        <div class="line diagonal line-2"></div>
+                      </label>
+                    </div>
+                </div>
+				<!-- Banner -->
+                <div class="box" id="banner"style="padding-bottom:0px">
+                	<div style="display: flex; justify-content: center; align-items: center;">
+                		<img src="img/banner.png" width="100%" height="100%">
+                	</div>
+                </div>
+				<!-- 搜索 -->				
+                <div class="box" style="overflow: visible;">
+                    <a href="#" name="search"></a>
+					
+                    <div style="display: flex; justify-content: center;align-items: center; padding-top: 20px" >
+                    	<div style="display: flex;width: 100%;align-items: center;justify-content: center;flex-direction: column;text-align:center;">
+                    		<div style="width: 55%;position: relative;justify-content: center;">
+                    			<input id="searchText" type="text"  placeholder="输入并搜索…" oninput ="autoFillSearch()" onblur="searchTextOnblur()" 
+                    			style="border: 1px solid rgba(34,36,38,.15); outline: 0; border-radius: 30px; width: 94%; height: 40px; background-color: #F3F6F8; padding-left: 15px; padding-right: 15px; "/>
+                				<div id="autoFillInput" style="width: 100%; position: absolute; z-index: 99999; background: #fff; overflow: auto;">
+	                    		</div>
+                    		</div>
+                    	</div>
+                    </div>
+					<!-- 搜索引擎 -->
+                    <div style="display: flex; justify-content: center;align-items: center; padding-top: 12px" >
+                   		<div style="display: flex;width: 100%;align-items: center;justify-content: center;flex-direction: column;text-align:center;">
+                   			<div style="justify-content: center;">
+                   				<input type="button" class="search_btn" value="百度" onclick="search_click('baidu')" />
+                   				<input type="button" class="search_btn" value="谷歌" onclick="search_click('google')" />
+                   				<input type="button" class="search_btn" value="github" onclick="search_click('github')" />
+                   				<input type="button" class="search_btn" value="必应" onclick="search_click('bing')" />
+                   				<input type="button" class="search_btn" value="极客" onclick="search_click('geek')" />
+								<input type="button" class="search_btn" value="bilibili" onclick="search_click('bilibili')" />
+								<input type="button" class="search_btn" value="知乎" onclick="search_click('zhihu')" />
+								<input type="button" class="search_btn" value="淘宝" onclick="search_click('taobao')" />
+								<input type="button" class="search_btn" value="京东" onclick="search_click('jingdong')" />
+								<br /><br />
+								<!--每日一言-->
+								<div id="hitokoto"style="font-size:13px;color:#a9a9a9;text-align: center;">:D 获取中...</div>
+								<script src="https://cdn.jsdelivr.net/npm/bluebird@3/js/browser/bluebird.min.js"></script>
+								<script src="https://cdn.jsdelivr.net/npm/whatwg-fetch@2.0.3/fetch.min.js"></script>
+								<!--一言-->
+								<script>
+  								fetch('https://v1.hitokoto.cn/?c=d&e&h&i&k')
+									.then(function (res){
+									return res.json();
+								})
+									.then(function (data) {
+									var hitokoto = document.getElementById('hitokoto');
+									hitokoto.innerText = " "+data.hitokoto; 
+								})
+									.catch(function (err) {
+									console.error(err);
+								})
+								</script>
+                   			</div>	
+                   		</div>
+                    </div>
+                </div>
+				<!-- 实用工具 -->
+				<div class="box">
+                <a href="#" name="shiyonggongju"></a>
+                <div class="sub-category">
+                <div><i class="iconfont icon-tool"></i>实用工具</div>
+                </div>
+                    <div>
+                    	<a target="_blank" href="https://www.google.com/imghp?hl=zh-CN&tab=wi&ogbl">
+                            <div class="item">
+                                <div class="no-logo">谷歌搜图</div>
+                                <div class="desc">最精准的搜索,最绚丽的浏览</div>
+                            </div>
+                        </a>
+                        <a target="_blank" href="https://translate.google.cn/">
+                            <div class="item">
+                                <div class="no-logo">谷歌翻译</div>
+                                <div class="desc">Google 的免费翻译服务</div>
+                            </div>
+                        </a>
+                        <a target="_blank" href="https://photos.google.com">
+                            <div class="item">
+                                <div class="no-logo">谷歌相册</div>
+                                <div class="desc">妥善备份、整理所有的照片</div>
+                            </div>
+                        </a>
+                        <a target="_blank" href="https://mail.google.com/">
+                            <div class="item">
+                                <div class="no-logo">Gmail</div>
+                                <div class="desc">直观、高效、实用的电子邮件应用</div>
+                            </div>
+                        </a>
+                        <a target="_blank" href="https://processon.com">
+                            <div class="item">
+                                <div class="no-logo">思维导图</div>
+                                <div class="desc">免费在线作图、实时协作</div>
+                            </div>
+                        </a>
+                        <a target="_blank" href="https://www.kuaidi100.com/">
+                            <div class="item">
+                                <div class="no-logo">快递100</div>
+                                <div class="desc">企业级物流数据服务</div>
+                            </div>
+                        </a>
+						    <a target="_blank" href="https://www.tiebazhushou.com/">
+                            <div class="item">
+                                <div class="no-logo">SFZ生成器</div>
+                                <div class="desc">随机生成SFZ号码</div>
+                            </div>
+                        </a>
+						    <a target="_blank" href="https://www.remove.bg/zh">
+                            <div class="item">
+                                <div class="no-logo">在线抠图</div>
+                                <div class="desc">学霸专用的免费的在线抠图网站</div>
+								
+                            </div>
+                        </a>
+						    <a target="_blank" href="https://cli.im/">
+                            <div class="item">
+                                <div class="no-logo">二维码生成器</div>
+                                <div class="desc">国内专业的二维码服务提供商</div>
+                            </div>
+                        </a>
+						    <a target="_blank" href="http://dwz.wailian.work/">
+                            <div class="item">
+                                <div class="no-logo">短网址生成</div>
+                                <div class="desc">帮您把冗长的URL地址缩短成8个字符以内的短网址</div>
+                            </div>
+                        </a>
+						    <a target="_blank" href="https://image.baidu.com/?fr=shitu">
+                            <div class="item">
+                                <div class="no-logo">百度识图</div>
+                                <div class="desc">百度图像搜索</div>
+                            </div>
+                        </a>
+						    <a target="_blank" href="https://www.ffkuaidu.com/">
+                            <div class="item">
+                                <div class="no-logo">文字转语音</div>
+                                <div class="desc">科大讯飞旗下的文字转语音工具</div>
+                            </div>
+                        </a>
+							<a target="_blank" href="https://www.canva.cn/">
+                            <div class="item">
+                                <div class="no-logo">Canva</div>
+                                <div class="desc">免费的在线设计工具</div>
+                            </div>
+                        </a>
+							<a target="_blank" href="http://www.ocrmaker.com/">
+                            <div class="item">
+                                <div class="no-logo">OCR文字识别</div>
+                                <div class="desc">免费在线文字识别，文字提取</div>
+                            </div>
+                        </a>
+							<a target="_blank" href="http://www.jq22.com/textDifference">
+                            <div class="item">
+                                <div class="no-logo">文本对比</div>
+                                <div class="desc">在线的文本对比工具</div>
+                            </div>
+                        </a>
+							<a target="_blank" href="http://www.hibt.net/">
+                            <div class="item">
+                                <div class="no-logo">种子转磁力</div>
+                                <div class="desc">种子磁力链互相转换</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+					<!-- 常用网址 -->
+				    <div class="box">
+                    <a href="#" name="changyongwangzhan"></a>
+                    <div class="sub-category">
+                        <div><i class="iconfont icon-daohang1"></i>常用网站</div>
+                    </div>
+                    <div>
+                    	<a target="_blank" href="https://pan.baidu.com/">
+                            <div class="item">
+                                <div class="no-logo">百度网盘</div>
+                                <div class="desc">百度网盘为您提供文件的网络备份、同步和分享服务</div>
+                            </div>
+                        </a>
+                        <a target="_blank" href="https://www.zhihu.com/">
+                            <div class="item">
+                                <div class="no-logo">知乎</div>
+                                <div class="desc">知乎，分享你刚编的故事</div>
+                            </div>
+                        </a>
+                        <a target="_blank" href="https://mail.163.com/">
+                            <div class="item">
+                                <div class="no-logo">163邮箱</div>
+                                <div class="desc">国内老牌邮箱</div>
+                            </div>
+                        </a>
+                        <a target="_blank" href="https://wallhaven.cc/">
+                            <div class="item">
+                                <div class="no-logo">Wallhaven</div>
+                                <div class="desc">优秀的壁纸网站</div>
+                            </div>
+                        </a>
+                        <a target="_blank" href="https://www.feng.com/">
+                            <div class="item">
+                                <div class="no-logo">威锋</div>
+                                <div class="desc">国内最大的苹果论坛</div>
+                            </div>
+                        </a>
+                        <a target="_blank" href="https://www.v2ex.com/">
+                            <div class="item">
+                                <div class="no-logo">V2EX</div>
+                                <div class="desc">创意工作者的社区</div>
+                            </div>
+                        </a>
+						    <a target="_blank" href="https://github.com/">
+                            <div class="item">
+                                <div class="no-logo">Github</div>
+                                <div class="desc">面向开源及私有软件项目的托管平台</div>
+                            </div>
+                        </a>
+						     <a target="_blank" href="https://www.oschina.net/">
+                            <div class="item">
+                                <div class="no-logo">开源中国</div>
+                                <div class="desc">目前领先的中文开源技术社区</div>
+								
+                            </div>
+                        </a>
+						      <a target="_blank" href="https://www.cloudflare.com/zh-cn/">
+                            <div class="item">
+                                <div class="no-logo">CloudFlare</div>
+                                <div class="desc">CDN</div>
+                            </div>
+                        </a>
+						    <a target="_blank" href="https://weibo.com/">
+                            <div class="item">
+                                <div class="no-logo">新浪微博</div>
+                                <div class="desc">随时随地发现新鲜事</div>
+                            </div>
+                        </a>
+							<a target="_blank" href="https://www.shouji.com.cn/">
+                            <div class="item">
+                                <div class="no-logo">手机乐园</div>
+                                <div class="desc">安卓手机应用下载</div>
+                            </div>
+                        </a>
+							<a target="_blank" href="https://ncov.dxy.cn/ncovh5/view/pneumonia">
+                            <div class="item">
+                                <div class="no-logo">新冠疫情动态</div>
+                                <div class="desc">丁香园·丁香医生全国新型肺炎疫情实时动态专题</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+					<!-- 办公 -->
+				    <div class="box">
+                    <a href="#" name="bangong"></a>
+                    <div class="sub-category">
+                        <div><i class="fa fa-asl-interpreting"></i>办公</div>
+                    </div>
+                    <div>
+                    	<a target="_blank" href="http://www.alltoall.net/">
+                            <div class="item">
+                                <div class="no-logo">格式转换</div>
+                                <div class="desc">免费的在线格式转换工具</div>
+                            </div>
+                        </a>
+                        <a target="_blank" href="https://shimo.im/">
+                            <div class="item">
+                                <div class="no-logo">石墨文档</div>
+                                <div class="desc">程办公系统 丨 多人协同办公软件</div>
+                            </div>
+                        </a>
+                        <a target="_blank" href="https://docs.qq.com/">
+                            <div class="item">
+                                <div class="no-logo">腾讯文档</div>
+                                <div class="desc">一款可多人协作的在线文档</div>
+                            </div>
+                        </a>
+						    <a target="_blank" href="https://mubu.com/">
+                            <div class="item">
+                                <div class="no-logo">幕布</div>
+                                <div class="desc">幕布，不只是大纲笔记，更是一种思考方式</div>
+                            </div>
+                        </a>
+						    <a target="_blank" href="http://www.tretars.com/">
+                            <div class="item">
+                                <div class="no-logo">逼格PPT</div>
+                                <div class="desc">PPT模板下载</div>
+                            </div>
+                        </a>
+						    <a target="_blank" href="http://www.ypppt.com/">
+                            <div class="item">
+                                <div class="no-logo">优品PPT</div>
+                                <div class="desc">PPT模板下载</div>
+                            </div>
+                        </a>
+						    <a target="_blank" href="http://www.1ppt.com/">
+                            <div class="item">
+                                <div class="no-logo">第一PPT</div>
+                                <div class="desc">PPT模板下载</div>
+                            </div>
+                        </a>
+
+                        <a target="_blank" href="https://www.wenjuan.com/">
+                            <div class="item">
+                                <div class="no-logo">问卷网</div>
+                                <div class="desc">专业易用的免费问卷调查平台</div>
+                            </div>
+                        </a>
+                        <a target="_blank" href="https://nav.ops-coffee.cn/hr.html">
+                            <div class="item">
+                                <div class="no-logo">HR导航</div>
+                                <div class="desc">运营咖啡吧的HR导航</div>
+                            </div>
+                        </a>
+						    <a target="_blank" href="https://nav.ops-coffee.cn/operation.html">
+                            <div class="item">
+                                <div class="no-logo">运营导航</div>
+                                <div class="desc">运营咖啡吧的运营导航</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+					<!-- 导航 -->
+				    <div class="box">
+                    <a href="#" name="daohang"></a>
+                    <div class="sub-category">
+                        <div><i class="fa fa-rocket"></i>导航</div>
+                    </div>
+                    <div>
+                    	<a target="_blank" href="http://www.yemaosheji.com/">
+                            <div class="item">
+                                <div class="no-logo">夜猫设计导航</div>
+                                <div class="desc">国内外优质设计资源网站导航</div>
+                            </div>
+                        </a>
+                        <a target="_blank" href="https://nav.ops-coffee.cn/">
+                            <div class="item">
+                                <div class="no-logo">咖啡吧导航</div>
+                                <div class="desc">追求技术的道路上，从不曾停下脚步的大佬</div>
+                            </div>
+                        </a>
+                        <a target="_blank" href="https://search.chongbuluo.com/">
+                            <div class="item">
+                                <div class="no-logo">虫部落快搜</div>
+                                <div class="desc">纯粹的搜索知识、技术和经验分享平台</div>
+                            </div>
+                        </a>
+                        <a target="_blank" href="http://chuangzaoshi.com/">
+                            <div class="item">
+                                <div class="no-logo">创造狮导航</div>
+                                <div class="desc">设计·前端·产品·运营</div>
+                            </div>
+                        </a>
+                        <a target="_blank" href="https://site.sciping.com/">
+                            <div class="item">
+                                <div class="no-logo">科塔学术导航</div>
+                                <div class="desc">国内领先的科研与学术资源导航平台</div>
+                            </div>
+                        </a>
+                        <a target="_blank" href="http://code.giffox.com/">
+                            <div class="item">
+                                <div class="no-logo">程序员导航</div>
+                                <div class="desc">程序员导航 丨 代码如诗</div>
+                            </div>
+                        </a>
+						    <a target="_blank" href="https://www.webjike.com/">
+                            <div class="item">
+                                <div class="no-logo">小呆导航</div>
+                                <div class="desc">大佬</div>
+                            </div>
+                        </a>
+							<a target="_blank" href="https://idesign.qq.com/">
+                            <div class="item">
+                                <div class="no-logo">腾讯设计导航</div>
+                                <div class="desc">腾讯设计导航，为设计师而生</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+				<!-- 精神粮食 -->
+				    <div class="box">
+                    <a href="#" name="jingshenliangshi"></a>
+                    <div class="sub-category">
+                        <div><i class="fa fa-pencil-square"></i>精神粮食</div>
+                    </div>
+                    <div>
+                    	<a target="_blank" href="https://www.yxgapp.com/">
+                            <div class="item">
+                                <div class="no-logo">译学馆</div>
+                                <div class="desc">优质的外国同步翻译综合视频学习网站</div>
+                            </div>
+                        </a>
+                        <a target="_blank" href="https://open.163.com/">
+                            <div class="item">
+                                <div class="no-logo">网易公开课</div>
+                                <div class="desc">国内外名校公开课</div>
+                            </div>
+                        </a>
+                        <a target="_blank" href="http://www.a-hospital.com/">
+                            <div class="item">
+                                <div class="no-logo">A+医学百科</div>
+                                <div class="desc">开放的在线医学百科全书网站</div>
+                            </div>
+                        </a>
+                        <a target="_blank" href="https://zh.moegirl.org/Mainpage">
+                            <div class="item">
+                                <div class="no-logo">萌娘百科</div>
+                                <div class="desc">二刺螈宝典</div>
+                            </div>
+                        </a>
+                        <a target="_blank" href="http://www.199it.com/">
+                            <div class="item">
+                                <div class="no-logo">互联网数据中心</div>
+                                <div class="desc">中文互联网数据资讯中心</div>
+                            </div>
+                        </a>
+                        <a target="_blank" href="https://zh.wikihow.com/%E9%A6%96%E9%A1%B5">
+                            <div class="item">
+                                <div class="no-logo">WikiHow</div>
+                                <div class="desc">让所有人学做任何事的平台</div>
+                            </div>
+                        </a>
+						    <a target="_blank" href="https://www.cdstm.cn/">
+                            <div class="item">
+                                <div class="no-logo">中国数字科技馆</div>
+                                <div class="desc">中国科协、教育部、中科院共建的国家级公益性科普服务平台</div>
+                            </div>
+                        </a>
+							<a target="_blank" href="http://www.ncpssd.org/">
+                            <div class="item">
+                                <div class="no-logo">国家哲学社科文献中心</div>
+                                <div class="desc">国家投入和支持的哲学社会科学文献信息资源服务</div>
+                            </div>
+                        </a>
+							<a target="_blank" href="http://www.oalib.com/">
+                            <div class="item">
+                                <div class="no-logo">Open Access Library</div>
+                                <div class="desc">免费的开源论文检索下载网站</div>
+                            </div>
+                        </a>
+							<a target="_blank" href="https://www.dpm.org.cn/">
+                            <div class="item">
+                                <div class="no-logo">故宫博物院</div>
+                                <div class="desc">故宫博物院，是一座特殊的博物馆</div>
+                            </div>
+                        </a>
+							<a target="_blank" href="https://www.icourse163.org/">
+                            <div class="item">
+                                <div class="no-logo">中国大学MOOC</div>
+                                <div class="desc">国家精品课程在线学习平台</div>
+                            </div>
+                        </a>
+							<a target="_blank" href="https://www.wanmen.org/free">
+                            <div class="item">
+                                <div class="no-logo">万门大学</div>
+                                <div class="desc">在线学习资源</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <!-- 知识早读 -->
+                <div class="box">
+                    <a href="" name="zaodu"></a>
+                    <div class="sub-category">
+                        <div><i class="fa fa-align-left"></i>知识早读</div>
+                    </div>
+                    <div>
+                        <a target="_blank" href="https://36kr.com/">
+                            <div class="item">
+                                <div class="logo">
+                                    <img src="logo/36kr.png"> 36氪
+                                </div>
+                                <div class="desc">
+                                    了解最新科技，创业投资相关资讯
+                                </div>
+                            </div>
+                        </a>
+                        <a target="_blank" href="http://www.geekpark.net/">
+                            <div class="item">
+                                <div class="logo">
+                                    <img src="logo/geekpark.png"> 极客公园
+                                </div>
+                                <div class="desc">
+                                    前沿科技观察报道，热点产品深度分析
+                                </div>
+                            </div>
+                        </a>
+                        <a target="_blank" href="http://www.niaogebiji.com/">
+                            <div class="item">
+                                <div class="logo">
+                                    <img src="logo/niaogebiji.png"> 鸟哥笔记
+                                </div>
+                                <div class="desc">
+                                    移动营销干货精选，运营狗宝典
+                                </div>
+                            </div>
+                        </a>
+                        <a target="_blank" href="https://xinquji.com/">
+                            <div class="item">
+                                <div class="logo">
+                                    <img src="logo/xinq.png"> 新趣集
+                                </div>
+                                <div class="desc">
+                                    发现有趣的新产品
+                                </div>
+                            </div>
+                        </a>
+                        <a target="_blank" href="https://sspai.com/">
+                            <div class="item">
+                                <div class="logo">
+                                    <img src="logo/ssp8.png"> 少数派
+                                </div>
+                                <div class="desc">
+                                    少数派 - 高效工作，品质生活
+                                </div>
+                            </div>
+                        </a>
+                        <a target="_blank" href="https://www.zealer.com/">
+                            <div class="item">
+                                <div class="logo">
+                                    <img src="logo/zear.png"> Zealer 中国
+                                </div>
+                                <div class="desc">
+                                    Wow Awesome
+                                </div>
+                            </div>
+                        </a>
+                        <a target="_blank" href="https://mo.fish/">
+                            <div class="item">
+                                <div class="logo">
+                                    <img src="logo/yutang.png"> 鱼塘热榜
+                                </div>
+                                <div class="desc">
+                                    鱼塘热榜提供了国内外各大热门网站的聚合信息
+                                </div>
+                            </div>
+                        </a>
+                        <a target="_blank" href="https://www.anyknew.com">
+                            <div class="item">
+                                <div class="logo">
+                                    <img src="logo/xiaolv.png"> 效率资讯
+                                </div>
+                                <div class="desc">
+                                    高效读新闻，5分钟遍历全网热点
+                                </div>
+                            </div>
+                        </a>
+                        <a target="_blank" href="https://www.ifanr.com/">
+                            <div class="item">
+                                <div class="logo">
+                                    <img src="logo/ifan.png"> 爱范儿
+                                </div>
+                                <div class="desc">
+                                    未来触手可及
+                                </div>
+                            </div>
+                        </a>
+                        <a target="_blank" href="https://www.huxiu.com/">
+                            <div class="item">
+                                <div class="logo">
+                                    <img src="logo/hux7.png"> 虎嗅网
+                                </div>
+                                <div class="desc">
+                                    在虎嗅，不错过互联网的每个重要时刻。
+                                </div>
+                            </div>
+						</a>
+                        <a target="_blank" href="https://www.cnbeta.com/">
+                            <div class="item">
+                                <div class="logo">
+                                    <img src="logo/cnbeta.png"> cnBeta
+                                </div>
+                                <div class="desc">
+                                    cnBeta.COM - 中文业界资讯站
+                                </div>
+                            </div>
+						</a>
+                        <a target="_blank" href="https://chuansongme.com/">
+                            <div class="item">
+                                <div class="logo">
+                                    <img src="logo/chuansongmen.png"> 传送门
+                                </div>
+                                <div class="desc">
+                                    微信公众账号和文章的导航及推荐
+                                </div>
+                            </div>
+						</a>
+
+                    </div>
+                </div>
+                <!-- 娱乐 -->
+                <div class="box">
+                    <a href="#" name="yule"></a>
+                    <div class="sub-category">
+                        <div><i class="fa fa-support"></i>娱乐</div>
+                    </div>
+                    <div>
+                        <a target="_blank" href="http://www.415.net">
+                            <div class="item">
+                                <div class="logo"><img src="logo/btzj.png" alt="BTzhijia"> BT之家</div>
+                                <div class="desc">影视爱好者的聚集地</div>
+                            </div>
+                        </a>
+                        <a target="_blank" href="https://youtube.com">
+                            <div class="item">
+                                <div class="logo"><img src="logo/ytb.png" alt="youtube"> Youtube</div>
+                                <div class="desc">全球最大的影片搜寻和共享平台</div>
+                            </div>
+                        </a>
+                        <a target="_blank" href="https://www.bilibili.com/">
+                            <div class="item">
+                                <div class="logo"><img src="logo/bilibili.png" alt="bilibili"> Bilibili</div>
+                                <div class="desc">哔哩哔哩 (゜-゜)つロ 干杯~-bilibili</div>
+                            </div>
+                        </a>
+                        <a target="_blank" href="https://www.acfun.cn/">
+                            <div class="item">
+                                <div class="logo"><img src="logo/acfun.png" alt="acfun"> ACFUN</div>
+                                <div class="desc">
+                                    <div class="info">
+                                        AcFun弹幕视频网 - 认真你就输啦 (・ω・)ノ- ( ゜- ゜)つロ
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <a target="_blank" href="http://www.rrys2019.com/">
+                            <div class="item">
+                                <div class="logo"><img src="logo/rrys.png" alt="yyets"> YYeTs 人人影视</div>
+                                <div class="desc">YYeTs 人人影视|字幕组官方下载站</div>
+                            </div>
+                        </a>
+						    <a target="_blank" href="http://neets.cc/">
+                            <div class="item">
+                                <div class="logo"><img src="logo/neets.png" alt="neets"> Neets</div>
+                                <div class="desc">一站式搜索互联网上相关的视频内容</div>
+                            </div>
+                        </a>
+							<a target="_blank" href="https://www.hanjutv.com/">
+                            <div class="item">
+                                <div class="logo"><img src="logo/hanju.png" alt="hanjutv"> 韩剧TV</div>
+                                <div class="desc">最新最全最快最方便的韩剧影视网站</div>
+                            </div>
+                        </a>
+							<a target="_blank" href="https://www.zhenbuka.com/">
+                            <div class="item">
+                                <div class="logo"><img src="logo/yingshi.png" alt="zhenbuka"> 真不卡影视</div>
+                                <div class="desc">在线影视网站</div>
+                            </div>
+                        </a>
+
+							<a target="_blank" href="https://music.qugeek.com/app/player">
+                            <div class="item">
+                                <div class="logo"><img src="logo/moling.png" alt="zhenbuka"> 在线音乐播放器	</div>
+                                <div class="desc">免费在线音乐播放器- 墨灵音乐</div>
+                            </div>
+                        </a>
+							<a target="_blank" href="https://www.jiumodiary.com/">
+                            <div class="item">
+                                <div class="logo"><img src="logo/jiumo.png" alt="zhenbuka"> 鸠摩搜索</div>
+                                <div class="desc">电子书搜索合集</div>
+                            </div>
+                        </a>
+					</div>
+                </div>		
+                <!-- 设计导航 -->
+                <div class="box">
+                    <a href="#" name="changyongwangzhi"></a>
+                    <div class="sub-category">
+                        <div><i class="fa fa-heart"></i>常用网址</div>
+                    </div>
+                    <div>
+                        <a target="_blank" href="http://www.dribbble.com/">
+                            <div class="item">
+                                <div class="logo"><img src="logo/dribbble.png" alt="Dribbble"> Dribbble</div>
+                                <div class="desc">全球设计师精选作品分享平台</div>
+                            </div>
+                        </a>
+                        <a target="_blank" href="https://www.behance.net/">
+                            <div class="item">
+                                <div class="logo"><img src="logo/behance.png" alt="Behance"> Behance</div>
+                                <div class="desc">Abode旗下全球设计作品展示平台</div>
+                            </div>
+                        </a>
+                        <a target="_blank" href="https://www.zcool.com.cn/">
+                            <div class="item">
+                                <div class="logo"><img src="logo/zcool.png" alt="zcool"> 站酷</div>
+                                <div class="desc">国内最大的设计师交流平台</div>
+                            </div>
+                        </a>
+                        <a target="_blank" href="https://www.ui.cn/">
+                            <div class="item">
+                                <div class="logo"><img src="logo/uichina.png" alt="uichina"> UI中国</div>
+                                <div class="desc">
+                                    <div class="info">
+                                        国内UI设计作品展示平台
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <a target="_blank" href="https://www.pinterest.com/">
+                            <div class="item">
+                                <div class="logo"><img src="logo/pinterest.png" alt="pinterest"> Pinterest</div>
+                                <div class="desc">全球设计师灵感分享采集网站</div>
+                            </div>
+                        </a>
+						    <a target="_blank" href="https://www.huaban.com/">
+                            <div class="item">
+                                <div class="logo"><img src="logo/huaban.png" alt="huaban"> 花瓣</div>
+                                <div class="desc">国内设计师图片设计灵感采集网站</div>
+                            </div>
+                        </a>
+													<a target="_blank" href="http://www.woshipm.com/">
+                            <div class="item">
+                                <div class="logo"><img src="logo/woshipm.png" alt="medium"> 人人都是产品经理</div>
+                                <div class="desc">产品经理、产品爱好者学习交流平台</div>
+                            </div>
+                        </a>
+							<a target="_blank" href="https://www.pixiv.net/">
+                            <div class="item">
+                                <div class="logo"><img src="logo/pixiv.png" alt="medium"> Pivix</div>
+                                <div class="desc">插画交流网站</div>
+                            </div>
+                        </a>
+							<a target="_blank" href="https://www.gracg.com/">
+                            <div class="item">
+                                <div class="logo"><img src="logo/gracg.png" alt="medium"> 涂鸦王国</div>
+                                <div class="desc">涂鸦王国 插画师作品</div>
+                            </div>
+                        </a>
+							<a target="_blank" href="https://www.gtn9.com/index.aspx">
+                            <div class="item">
+                                <div class="logo"><img src="logo/gutianlu9hao.png" alt="medium"> 古田路9号</div>
+                                <div class="desc">国内专业品牌创意平台</div>
+                            </div>
+                        </a>
+							<a target="_blank" href="https://www.ad110.com/">
+                            <div class="item">
+                                <div class="logo"><img src="logo/110.png" alt="medium"> AD110</div>
+                                <div class="desc">整合全球设计、建筑、广告、插画、摄影、艺术和创意信息</div>
+                            </div>
+                        </a>
+							<a target="_blank" href="http://www.ad518.com/">
+                            <div class="item">
+                                <div class="logo"><img src="logo/518.png" alt="medium"> AD518</div>
+                                <div class="desc">最设计</div>
+                            </div>
+                        </a>
+					</div>
+                </div>
+				<!-- 交互体验 -->
+                <div class="box">
+                    <a href="" name="jiaohu"></a>
+                    <div class="sub-category">
+                        <div><i class="fa fa-eercast"></i>交互体验</div>
+                    </div>
+                    <div>
+                        <a target="_blank" href="http://www.woshipm.com/category/ucd">
+                            <div class="item">
+                                <div class="logo">
+                                    <img src="logo/woshipm.png"> 人人都是产品经理
+                                </div>
+                                <div class="desc">
+                                    人人都是产品经理交互体验板块
+                                </div>
+                            </div>
+                        </a>
+                        <a target="_blank" href="https://www.iamue.com/">
+                            <div class="item">
+                                <div class="logo">
+                                    <img src="logo/iamue.png"> 交互设计学堂
+                                </div>
+                                <div class="desc">
+                                    交互设计专业知识分享平台
+                                </div>
+                            </div>
+                        </a>
+                        <a target="_blank" href="https://uxren.cn/">
+                            <div class="item">
+                                <div class="logo">
+                                    <img src="logo/uxren.png"> UXRen
+                                </div>
+                                <div class="desc">
+                                    用户体验设计师的专业社区
+                                </div>
+                            </div>
+                        </a>
+						</div>
+                </div>
+				<!-- 设计规范 -->
+                <div class="box">
+                    <a href="" name="guifan"></a>
+                    <div class="sub-category">
+                        <div><i class="fa fa-file-text"></i>设计规范</div>
+                    </div>
+                    <div>
+                        <a target="_blank" href="https://developer.apple.com/design/">
+                            <div class="item">
+                                <div class="logo">
+                                    <img src="logo/apple.png"> Apple Design
+                                </div>
+                                <div class="desc">
+                                    苹果官方设计指南
+                                </div>
+                            </div>
+                        </a>
+                        <a target="_blank" href="https://developer.android.google.cn/design/index.html">
+                            <div class="item">
+                                <div class="logo">
+                                    <img src="logo/android.png"> Android Design
+                                </div>
+                                <div class="desc">
+                                    安卓官方设计指南
+                                </div>
+                            </div>
+                        </a>
+                        <a target="_blank" href="https://design.google">
+                            <div class="item">
+                                <div class="logo">
+                                    <img src="logo/google.png"> Google Design
+                                </div>
+                                <div class="desc">
+                                    Google官方设计指南
+                                </div>
+                            </div>
+                        </a>
+						<a target="_blank" href="https://www.microsoft.com/design">
+                            <div class="item">
+                                <div class="logo">
+                                    <img src="logo/microsoft.png"> Microsoft Design
+                                </div>
+                                <div class="desc">
+                                    微软官方设计语言
+                                </div>
+                            </div>
+                        </a>
+						<a target="_blank" href="https://material.io/">
+                            <div class="item">
+                                <div class="logo">
+                                    <img src="logo/materialdesign.png"> Material Design
+                                </div>
+                                <div class="desc">
+                                    Material官方设计指南
+                                </div>
+                            </div>
+                        </a>
+                        <a target="_blank" href="https://www.paintcodeapp.com/news/ultimate-guide-to-iphone-resolutions">
+                            <div class="item">
+                                <div class="logo">
+                                    <img src="logo/paintcode.png"> PaintCode
+                                </div>
+                                <div class="desc">
+                                    iOS设备屏幕尺寸设计规范
+                                </div>
+                            </div>
+                        </a>
+                        <a target="_blank" href="https://material.io/resources/devices/">
+                            <div class="item">
+                                <div class="logo">
+                                    <img src="logo/material.png"> Material Design
+                                </div>
+                                <div class="desc">
+                                    Google官方安卓主流设备尺寸
+                                </div>
+                            </div>
+                        </a>
+						<a target="_blank" href="http://screensiz.es/phone">
+                            <div class="item">
+                                <div class="logo">
+                                    <img src="logo/screensiz.png"> Screensiz
+                                </div>
+                                <div class="desc">
+                                    移动设备屏幕尺寸设计规范大全
+                                </div>
+                            </div>
+                        </a>
+						<a target="_blank" href="https://weui.io/">
+                            <div class="item">
+                                <div class="logo">
+                                    <img src="logo/wechat.png"> 微信小程序规范
+                                </div>
+                                <div class="desc">
+                                    微信小程序官方UI组件库
+                                </div>
+                            </div>
+                        </a>
+                        <a target="_blank" href="https://docs.alipay.com/mini/design">
+                            <div class="item">
+                                <div class="logo">
+                                    <img src="logo/alipay.png"> 支付宝小程序规范
+                                </div>
+                                <div class="desc">
+                                    支付宝小程序设计规范
+                                </div>
+                            </div>
+                        </a>
+                        <a target="_blank" href="https://smartprogram.baidu.com/docs/design/overview/introduction/">
+                            <div class="item">
+                                <div class="logo">
+                                    <img src="logo/baidu.png"> 百度小程序规范
+                                </div>
+                                <div class="desc">
+                                    智能小程序体验设计指南
+                                </div>
+                            </div>
+                        </a>
+						<a target="_blank" href="https://v4.bootcss.com/">
+                            <div class="item">
+                                <div class="logo">
+                                    <img src="logo/bootstrap.png"> Bootstrap V4
+                                </div>
+                                <div class="desc">
+                                    全球最受欢迎的前端组件库
+                                </div>
+                            </div>
+                        </a>
+						</div>
+                </div>
+				               <!-- 设计资源 -->
+                <div class="box">
+                    <a href="" name="shejiziyuan"></a>
+                    <div class="sub-category">
+                        <div><i class="fa fa-cloud-download"></i>设计资源</div>
+                    </div>
+                    <div>
+                        <a target="_blank" href="https://www.pexels.com/">
+                            <div class="item">
+                                <div class="logo">
+                                    <img src="logo/pexels.ico"> Pexels
+                                </div>
+                                <div class="desc">
+                                    高质量的图片网站，可以免费使用。
+                                </div>
+                            </div>
+                        </a>
+                        <a target="_blank" href="https://ccsearch.creativecommons.org/">
+                            <div class="item">
+                                <div class="logo">
+                                    <img src="logo/cc-search.png"> CC Search
+                                </div>
+                                <div class="desc">
+                                    CC Search 上搜索到的图片资源都是无版权的，我们可以免费的使用。
+                                </div>
+                            </div>
+                        </a>
+                        <a target="_blank" href="https://color.adobe.com/zh/create">
+                            <div class="item">
+                                <div class="logo">
+                                    <img src="logo/iconfinder.png"> Adobe色轮
+                                </div>
+                                <div class="desc">
+                                    Adobe Color建立探索趨勢我的主題。
+                                </div>
+                            </div>
+                        </a>
+                        <a target="_blank" href="https://unsplash.com/">
+                            <div class="item">
+                                <div class="logo">
+                                    <img src="logo/unsplash.png"> Unsplash
+                                </div>
+                                <div class="desc">
+                                    免费高清素材网站。
+                                </div>
+                            </div>
+                        </a>
+                        <a target="_blank" href="https://www.picdiet.com/zh-cn">
+                            <div class="item">
+                                <div class="logo">
+                                    <img src="logo/ofcoder.png"> picdiet
+                                </div>
+                                <div class="desc">
+                                    独特且强悍的JavaScript 算法，能极速压缩 80% 的图片大小，而不损害其质量。
+                                </div>
+                            </div>
+                        </a>
+                        <a target="_blank" href="http://www.uigreat.com/">
+                            <div class="item">
+                                <div class="logo">
+                                    <img src="logo/uigreat-favicon.jpg"> UIGREAT
+                                </div>
+                                <div class="desc">
+                                    优秀设计师的贴心伴侣。
+                                </div>
+                            </div>
+                        </a>
+                        <a target="_blank" href="http://huaban.com/">
+                            <div class="item">
+                                <div class="logo">
+                                    <img src="logo/huaban-favicon.png"> 花瓣
+                                </div>
+                                <div class="desc">
+                                    花瓣，陪你做生活的设计师。
+                                </div>
+                            </div>
+                        </a>
+                        <a target="_blank" href="https://dribbble.com/">
+                            <div class="item">
+                                <div class="logo">
+                                    <img src="logo/dribbble-favicon.png"> Dribbble
+                                </div>
+                                <div class="desc">
+                                    设计作品的交流平台
+                                </div>
+                            </div>
+                        </a>
+                        <a target="_blank" href="https://www.behance.net/">
+                            <div class="item">
+                                <div class="logo">
+                                    <img src="logo/behance-favicon.png"> Behance
+                                </div>
+                                <div class="desc">
+                                    系列设计作品开放平台
+                                </div>
+                            </div>
+                        </a>
+                        <a target="_blank" href="https://www.pinterest.com/">
+                            <div class="item">
+                                <div class="logo">
+                                    <img src="logo/pinterest-favicon.png"> Itmeo
+                                </div>
+                                <div class="desc">
+                                    渐变色在线生成
+                                </div>
+                            </div>
+                        </a>
+                        <a target="_blank" href="http://www.zcool.com.cn/">
+                            <div class="item">
+                                <div class="logo">
+                                    <img src="logo/zcool-favicon.jpg"> 站酷
+                                </div>
+                                <div class="desc">
+                                    打开站酷,发现更好的设计!
+                                </div>
+                            </div>
+						</a>
+                        <a target="_blank" href="https://ibaotu.com/">
+                            <div class="item">
+                                <div class="logo">
+                                    <img src="logo/baotu.png"> 包图网
+                                </div>
+                                <div class="desc">
+                                    专注原创商用设计图片下载。
+                                </div>
+                            </div>
+						</a>
+                        <a target="_blank" href="https://www.pakutaso.com/">
+                            <div class="item">
+                                <div class="logo">
+                                    <img src="logo/pakutaso.png"> Pakutaso
+                                </div>
+                                <div class="desc">
+                                    高品质的免费写真素材站
+                                </div>
+                            </div>
+						</a>
+                        <a target="_blank" href="https://www.allhistory.com/painting">
+                            <div class="item">
+                                <div class="logo">
+                                    <img src="logo/quanhuazuo.png"> 全画作
+                                </div>
+                                <div class="desc">
+                                    超高分辨率艺术作品欣赏
+                                </div>
+                            </div>
+						</a>
+                        <a target="_blank" href="http://www.aigei.com/">
+                            <div class="item">
+                                <div class="logo">
+                                    <img src="logo/aigei.png"> 爱给网
+                                </div>
+                                <div class="desc">
+                                    专注免费素材
+                                </div>
+                            </div>
+                        </a>
+                        <a target="_blank" href="https://oursketch.com/">
+                            <div class="item">
+                                <div class="logo">
+                                    <img src="logo/oursketch.png"> OurSketch
+                                </div>
+                                <div class="desc">
+                                    Sketch素材 插件 视频等相关资源
+                                </div>
+                            </div>
+                        </a>
+						    <a target="_blank" href="https://www.iguoguo.net/">
+                            <div class="item">
+                                <div class="logo">
+                                    <img src="logo/iguoguo.png"> 爱果果
+                                </div>
+                                <div class="desc">
+                                    设计师的灵感聚合地和素材下载源
+                                </div>
+                            </div>
+                        </a>
+						    <a target="_blank" href="https://www.iamxk.com/">
+                            <div class="item">
+                                <div class="logo">
+                                    <img src="logo/iamxk.png"> 设计小咖
+                                </div>
+                                <div class="desc">
+                                    高品质设计资源俱乐部
+                                </div>
+                            </div>
+                        </a>
+						    <a target="_blank" href="http://www.qiuziti.com/">
+                            <div class="item">
+                                <div class="logo">
+                                    <img src="logo/qiuziti.png"> 求字体网
+                                </div>
+                                <div class="desc">
+                                    上传图片找字体
+                                </div>
+                            </div>
+                        </a>
+						    <a target="_blank" href="http://www.sccnn.com/">
+                            <div class="item">
+                                <div class="logo">
+                                    <img src="logo/sccnn.png"> 素材中国
+                                </div>
+                                <div class="desc">
+                                    老牌素材资源网
+                                </div>
+                            </div>
+                        </a>
+							<a target="_blank" href="https://www.hituyu.com/">
+                            <div class="item">
+                                <div class="logo">
+                                    <img src="logo/tuyu.png"> 图鱼
+                                </div>
+                                <div class="desc">
+                                    专注于无缝平铺背景底纹素材
+                                </div>
+                            </div>
+                        </a>
+							<a target="_blank" href="https://www.iconfont.cn/">
+                            <div class="item">
+                                <div class="logo">
+                                    <img src="logo/iconfont.png"> IconFont
+                                </div>
+                                <div class="desc">
+                                    阿里巴巴矢量图标库
+                                </div>
+                            </div>
+                        </a>
+							<a target="_blank" href="http://zhongguose.com/">
+                            <div class="item">
+                                <div class="logo">
+                                    <img src="logo/zhongguose.png"> 中国色
+                                </div>
+                                <div class="desc">
+                                    中国传统配色方案
+                                </div>
+                            </div>
+                        </a>
+							<a target="_blank" href="https://www.colordic.org/w">
+                            <div class="item">
+                                <div class="logo">
+                                    <img src="logo/colordic.png"> 日本色
+                                </div>
+                                <div class="desc">
+                                    日本传统配色方案
+                                </div>
+                            </div>
+                        </a><a target="_blank" href="https://www.shejidaren.com/examples/tools/golden-ratio/index.html">
+                            <div class="item">
+                                <div class="logo">
+                                    <img src="logo/shejidaren.png"> 黄金比在线计算
+                                </div>
+                                <div class="desc">
+                                    黄金比例在线计算工具
+                                </div>
+                            </div>
+                        </a>
+								<a target="_blank" href="http://waifu2x.udp.jp/index.zh-CN.html">
+                            <div class="item">
+                                <div class="logo">
+                                    <img src="logo/waifu2x.png"> waifu2x
+                                </div>
+                                <div class="desc">
+                                    使用卷积神经网络对动漫风格的图片进行放大操作
+                                </div>
+                            </div>
+                        </a>
+								<a target="_blank" href="http://gridzzly.com/">
+                            <div class="item">
+                                <div class="logo">
+                                    <img src="logo/gridzzly.png"> 生成网格背景
+                                </div>
+                                <div class="desc">
+                                    在线生成网格背景
+                                </div>
+                            </div>
+                        </a>
+							<a target="_blank" href="https://getwaves.io/">
+                            <div class="item">
+                                <div class="logo">
+                                    <img src="logo/getwaves.png"> 生成波浪背景
+                                </div>
+                                <div class="desc">
+                                    在线生成波浪背景
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+				<!-- 设计教程 -->
+                <div class="box">
+                    <a href="" name="jiaocheng"></a>
+                    <div class="sub-category">
+                        <div><i class="fa fa-coffee"></i>设计教程</div>
+                    </div>
+                    <div>
+                        <a target="_blank" href="https://www.gogoup.com/">
+                            <div class="item">
+                                <div class="logo">
+                                    <img src="logo/gogoup.png"> 站酷高高手
+                                </div>
+                                <div class="desc">
+                                    艺术设计在线教育平台
+                                </div>
+                            </div>
+                        </a>
+                        <a target="_blank" href="https://www.imooc.com">
+                            <div class="item">
+                                <div class="logo">
+                                    <img src="logo/imooc.png"> 慕课网
+                                </div>
+                                <div class="desc">
+                                    国内著名的IT技能学习平台
+                                </div>
+                            </div>
+                        </a>
+                        <a target="_blank" href="https://www.uisdc.com/">
+                            <div class="item">
+                                <div class="logo">
+                                    <img src="logo/uisdc.png"> 优设网
+                                </div>
+                                <div class="desc">
+                                    国内设计师交流学习平台
+                                </div>
+                            </div>
+                        </a>
+						<a target="_blank" href="https://uxcoffee.com/">
+                            <div class="item">
+                                <div class="logo">
+                                    <img src="logo/uxcoffee.png"> UX Coffee
+                                </div>
+                                <div class="desc">
+                                    用户体验设计博客节目
+                                </div>
+                            </div>
+                        </a>
+						<a target="_blank" href="https://www.yineng.fm/">
+                            <div class="item">
+                                <div class="logo">
+                                    <img src="logo/yineng.png"> 异能电台
+                                </div>
+                                <div class="desc">
+                                    将全宇宙设计师的故事讲给你听
+                                </div>
+                            </div>
+                        </a>
+                        <a target="_blank" href="https://www.51zxw.net/default.aspx">
+                            <div class="item">
+                                <div class="logo">
+                                    <img src="logo/51zxw.png"> 我要自学网
+                                </div>
+                                <div class="desc">
+                                    各类工具视频在线教程
+                                </div>
+                            </div>
+                        </a>
+					</div>
+                </div>
+								<!-- 其他资源 -->
+                <div class="box">
+                    <a href="" name="qitaziyuan"></a>
+                    <div class="sub-category">
+                        <div><i class="fa fa-cloud-download"></i>其他资源</div>
+                    </div>
+                    <div>
+                        <a target="_blank" href="http://www.lookae.com/">
+                            <div class="item">
+                                <div class="logo">
+                                    <img src="logo/lookae.png"> LookAE
+                                </div>
+                                <div class="desc">
+                                    大众脸影视后期特效，免费&收费的插件模板
+                                </div>
+                            </div>
+                        </a>
+                        <a target="_blank" href="https://www.newcger.com/">
+                            <div class="item">
+                                <div class="logo">
+                                    <img src="logo/xincger.png"> 新CG儿
+                                </div>
+                                <div class="desc">
+                                    影视后期设计师交流的平台，提供免费的AE模板等素材
+                                </div>
+                            </div>
+                        </a>
+                        <a target="_blank" href="https://www.3d66.com/">
+                            <div class="item">
+                                <div class="logo">
+                                    <img src="logo/3d66.png"> 3D溜溜网
+                                </div>
+                                <div class="desc">
+                                    3D模型免费下载，更有无数软件以及插件
+                                </div>
+                            </div>
+                        </a>
+						<a target="_blank" href="http://vidlery.com/">
+                            <div class="item">
+                                <div class="logo">
+                                    <img src="logo/vidlery.png"> Vidlery
+                                </div>
+                                <div class="desc">
+                                    专注免费动画视频的网站
+                                </div>
+                            </div>
+                        </a>
+						<a target="_blank" href="https://www.zuoshipin.com/">
+                            <div class="item">
+                                <div class="logo">
+                                    <img src="logo/zuoshipin.png"> 做视频网
+                                </div>
+                                <div class="desc">
+                                    提供ae模版，视频素材的模板免费下载网站
+                                </div>
+                            </div>
+                        </a>
+                        <a target="_blank" href="https://www.ear0.com/">
+                            <div class="item">
+                                <div class="logo">
+                                    <img src="logo/erling.png"> 耳聆网
+                                </div>
+                                <div class="desc">
+                                    中国最专业的声音分享平台
+                                </div>
+                            </div>
+                        </a>
+													<a target="_blank" href="https://msdn.itellyou.cn/">
+                            <div class="item">
+                                <div class="logo"><img src="logo/itellyou.png" alt="zhenbuka"> MSDN我告诉你</div>
+                                <div class="desc">Windows系统&软件镜像下载</div>
+                            </div>
+                        </a>
+					</div>
+                </div>
+
+<div class="reward" style="margin-top:10px;"><a href="name="dashang"></a>
+    <div class="reward-button"" name="dashang">
+      赏
+      <span class="reward-code"><span class="alipay-code"><img class="alipay-img" src="img/ali.png"><b>支付宝扫码打赏</b></span><span class="wechat-code"><img class="wechat-img" src="img/vx.png"><b>微信打赏</b></span></span>
+    </div>
+    <p class="reward-notice"> 如果本站对您有帮助，欢迎移至上方按钮打赏<br/><br/>
+							本站内容源自互联网，如有内容侵犯了你的权益，请联系删除相关内容，联系邮箱：brhiza@qq.com</p>
+							</div>
+							</div>
+
+                <footer class="footer">
+                    <div class="copyright">
+                        <div style="display: flex; justify-content: center;">
+                            Copyright © 2020 &nbsp;
+                            <a href="https://m.brhiza.ml"> 移动版</a>
+                        </div>
+                    </div>
+                </footer>
+                <div id="fixedBar"><svg class="Zi Zi--BackToTop" title="回到顶部" fill="currentColor" viewBox="0 0 24 24" width="24" height="24"><path d="M16.036 19.59a1 1 0 0 1-.997.995H9.032a.996.996 0 0 1-.997-.996v-7.005H5.03c-1.1 0-1.36-.633-.578-1.416L11.33 4.29a1.003 1.003 0 0 1 1.412 0l6.878 6.88c.782.78.523 1.415-.58 1.415h-3.004v7.005z"></path></svg></div>
+        </section>
+        <script src="js/jquery.js"></script>
+        <script src="js/function.js"></script>
+        <script>
+        var oMenu = document.getElementById('menu');
+        var oLeftBar = document.getElementById('leftBar');
+        var menuFrom = document.getElementById('menu-form');
+
+        oMenu.onclick = function() {
+            if (oLeftBar.offsetLeft == 0) {
+                oLeftBar.style.left = -249 + 'px';
+            }
+            else {
+                oLeftBar.style.left = 0;
+            }
+        }
+
+
+        // 监听页面宽度变化
+        window.onresize = function() {
+            judgeWidth();
+            // console.log(document.documentElement.clientWidth);
+        };
+
+        // 判断页面宽度
+        function judgeWidth() {
+            if (document.documentElement.clientWidth > 481) {
+                oLeftBar.style.left = 0;
+            } else {
+                oLeftBar.style.left = -249 + 'px';
+            }
+        }
+
+
+        var oNavItem = document.getElementById('navItem');
+        var aA = oNavItem.getElementsByTagName('a');
+        for (var i = 0; i < aA.length; i++) {
+            aA[i].onclick = function() {
+                for (var j = 0; j < aA.length; j++) {
+                    aA[j].className = '';
+                }
+                this.className = 'active';
+                if (oLeftBar.offsetLeft == 0) {
+                    if (document.documentElement.clientWidth <= 481) {
+                        oLeftBar.style.left = -249 + 'px';
+                        menuFrom.checked = false;
+
+                    }
+                }
+            }
+        }
+
+
+        $(window).scroll(function() {
+            if($(window).scrollTop() >= 200){
+                $('#fixedBar').fadeIn(300);
+            }else{
+                $('#fixedBar').fadeOut(300);
+            }
+        });
+        $('#fixedBar').click(function() {
+            $('html,body').animate({scrollTop:'0px'},800);
+        })
+        </script>
+</body>
+
+</html>
